@@ -14,6 +14,7 @@ textarea {
 
 }
 
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -24,7 +25,7 @@ textarea {
 
 .description {
   white-space: pre-wrap;
-width: 30rem;
+  width: 50rem;
   justify-content: center;
 }
 
@@ -34,11 +35,16 @@ width: 30rem;
 }
 
 .row {
-  white-space: nowrap;
-
   border-top: 1px solid white;
-justify-content: center;
-  white-space: normal;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.hourTitle {
+  display: flex;
+  font-size: large;
+  justify-content: flex-end;
+  margin-right: 2px
 }
 
 .hour {
@@ -69,7 +75,7 @@ justify-content: center;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
-  width: 2rem;
+  width: 4rem;
 
 }
 

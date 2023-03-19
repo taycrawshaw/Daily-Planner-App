@@ -17,25 +17,25 @@ currentDay.text(todayMain)
 let hourNum = moment().hour();
 
 
-
+// initial arrays that the elements are to be generated from 
 workHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 workHoursText = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 const main = $("main");
 savedNotes = []
 
-
+// loop to create rows with relevent classes, with titles and text areas, as well as save buttons.
 for (let i = 0; i < workHours.length; i++) {
 const row = $("<div>", {"class": "row"});
-const hourTitle = $("<h2>", {"class": "hour"}).text(workHoursText[i]);
+const hourTitle = $("<h2>", {"class": "hour hourTitle"}).text(workHoursText[i]);
 const memoArea = $("<textarea>", {"class": "description"});
 
 const saveBtnbBox = $("<div>", {"class": "saveBtn"})
 const saveBtn = $("<i>", {"class": "fas fa-save"});
-//const textArea = $("<")
 
 
 
 
+// appending save button to the save button box, and then the title, text areas, and button box to each row.
 saveBtnbBox.append(saveBtn)
 row.append(hourTitle, memoArea, saveBtnbBox);
 main.append(row)
@@ -45,13 +45,13 @@ main.append(row)
 
 let storedNotes = JSON.parse(localStorage.getItem("notes"));
 
-if (storedNotes !== null) {
-   
-    memoArea.text(storedNotes[i])
 
-} else {
-    memoArea.text("")
+if (storedNotes !== null) {
+    savedNotes = savedNotes.concat(storedNotes)
 }
+
+    memoArea.text(savedNotes[i])
+
 
 
 
